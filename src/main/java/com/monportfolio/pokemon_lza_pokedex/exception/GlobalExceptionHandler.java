@@ -20,4 +20,16 @@ public class GlobalExceptionHandler
 
         return new ResponseEntity<>( errorDTO, HttpStatus.CONFLICT );
     }
+
+    @ExceptionHandler( TrainerAlreadyExistsException.class )
+    public ResponseEntity<ErrorDTO> handleTrainerAlreadyExistsException( TrainerAlreadyExistsException ex )
+    {
+
+        ErrorDTO errorDTO = new ErrorDTO();
+
+        errorDTO.setMessage( ex.getMessage() );
+        errorDTO.setExceptionType( ex.getClass().getSimpleName() );
+
+        return new ResponseEntity<>( errorDTO, HttpStatus.CONFLICT );
+    }
 }

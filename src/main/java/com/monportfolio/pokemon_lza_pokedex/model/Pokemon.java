@@ -69,4 +69,8 @@ public class Pokemon
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Set<PokemonForm> forms = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trainer_id") // Clé étrangère dans la table 'pokemon'
+    private Trainer trainer;
 }

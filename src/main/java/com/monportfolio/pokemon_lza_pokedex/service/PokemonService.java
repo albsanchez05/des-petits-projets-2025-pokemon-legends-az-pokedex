@@ -35,11 +35,13 @@ public class PokemonService
 
     public Pokemon updatePokemon(Long id, Pokemon detailsPokemon) {
         return repositoryPokemon.findById( id ).map(pokemon ->  {
-            pokemon.setNumber( detailsPokemon.getNumber() );
             pokemon.setName( detailsPokemon.getName() );
-            pokemon.setGeneration( detailsPokemon.getGeneration() );
+            pokemon.setNumber( detailsPokemon.getNumber() );
             pokemon.setCatch_rate( detailsPokemon.getCatch_rate() );
+            pokemon.setGeneration( detailsPokemon.getGeneration() );
             pokemon.set_legendary( detailsPokemon.is_legendary() );
+            pokemon.setImage_path( detailsPokemon.getImage_path() );
+            pokemon.set_registered( detailsPokemon.is_registered() );
             return repositoryPokemon.save( pokemon );
         }).orElseThrow(() -> new RuntimeException("Pokemon n." + id + "not found"));
     }
@@ -52,6 +54,10 @@ public class PokemonService
         }
         System.out.println("Pokemon n." + id + " deleted");
     }
+
+//    public Pokemon createPokemonAndAssignTrainer (Long TrainerId, Pokemon minimalPokemon) {
+//
+//    }
 
 
 
