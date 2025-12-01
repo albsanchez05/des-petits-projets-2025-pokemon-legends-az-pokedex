@@ -38,10 +38,8 @@ public class PokemonService
             pokemon.setNumber( detailsPokemon.getNumber() );
             pokemon.setName( detailsPokemon.getName() );
             pokemon.setGeneration( detailsPokemon.getGeneration() );
-            pokemon.setCatchRate( detailsPokemon.getCatchRate() );
-            pokemon.setHeight( detailsPokemon.getHeight() );
-            pokemon.setWeight( detailsPokemon.getWeight() );
-            pokemon.setLegendary( detailsPokemon.isLegendary() );
+            pokemon.setCatch_rate( detailsPokemon.getCatch_rate() );
+            pokemon.set_legendary( detailsPokemon.is_legendary() );
             return repositoryPokemon.save( pokemon );
         }).orElseThrow(() -> new RuntimeException("Pokemon n." + id + "not found"));
     }

@@ -20,9 +20,9 @@ public class StatBlock
     private Long id;
 
     private int hp;
-    private int baseAttack;
-    private int baseDefense;
-    private int specialAttack;
-    private int specialDefense;
+    private int attack;
+    private int defense;
+    private int special_attack;
+    private int special_defense;
     private int speed;
 }

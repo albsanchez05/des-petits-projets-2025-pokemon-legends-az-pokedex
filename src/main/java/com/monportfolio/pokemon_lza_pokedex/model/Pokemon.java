@@ -18,15 +18,15 @@ public class Pokemon
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private int number;
     @Column(unique = true, nullable = false)
     private String name;
+    @Column(unique = true)
+    private int number;
+    private int catch_rate;
     private int generation;
-    private String catchRate;
-    private double height;
-    private double weight;
-    private boolean isLegendary = false;
+    private boolean is_legendary = false;
+    private String image_path;
+    private boolean is_registered;
 
 
     // B. RELACIÓN ONE-TO-ONE (StatBlock)

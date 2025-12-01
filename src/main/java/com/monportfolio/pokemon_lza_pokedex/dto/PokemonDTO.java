@@ -7,12 +7,12 @@ import lombok.Data;
 public class PokemonDTO
 {
     private Long id;
-    private int number;
     private String name;
+    private int number;
+    private int catch_rate;
     private int generation;
-    private String catchRate;
-    private double height;
-    private double weight;
-    private boolean isLegendary = false;
+    private boolean is_legendary = false;
+    private String image_path;
+    private boolean is_registered;
 
 }
